@@ -67,13 +67,13 @@ For frontend projects, please consider using the [Frontend Version](https://www.
 
 The core functionalities are implemented in Rust, ensuring high performance and reliability:
 
-- [x] ~~hash md5~~
-- [x] ~~hash sha256~~
-- [x] ~~hash sha512~~
-- [x] ~~encode base64~~
-- [x] ~~decode base64~~
-- [x] ~~random bytes~~
-- [x] ~~random uuid v4~~
+- [x] ~~hash md5~~ - Available
+- [x] ~~hash sha256~~ - Available
+- [x] ~~hash sha512~~ - Available
+- [x] ~~encode base64~~ - Available
+- [x] ~~decode base64~~ - Available
+- [x] ~~random bytes~~ - Available
+- [x] ~~random uuid v4~~ - Available
 - [ ] signs
 - [ ] keys
 - [ ] box create
