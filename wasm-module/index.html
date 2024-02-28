@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Simply Builder Module - Crypto utilities for SimplyBuilder</title>
+  </head>
+  <body>
+  <script type="module">
+    import SimplyBuilderCrypto from 'https://cdn.jsdelivr.net/npm/@jamilservices/sb-module-crypto-front@latest/index.min.js';
+    const string = "test";
+    const enc = SimplyBuilderCrypto.base64Encode(string);
+    const dec = SimplyBuilderCrypto.base64Encode(enc);
+
+    console.log(`String: ${string}, base64 encoded: ${enc}, base64 decoded: ${dec}`);
+  </script>
+  </body>
+</html>
