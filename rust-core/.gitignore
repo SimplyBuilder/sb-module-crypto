@@ -6,7 +6,16 @@
 !AUTHORS
 !LICENSE
 !MAINTAINERS.md
-!README.md
 !GOVERNANCE.md
 !CONTRIBUTING.md
 !CHANGELOG.md
+
+!.rustfmt.toml
+!.rusty-hook.toml
+
+!Cargo.toml
+
+!src
+!src/lib.rs
+!src/modules
+!src/modules/**
