@@ -1,0 +1,81 @@
+{
+  "name": "@jamilservices/sb-module-crypto-back",
+  "package": "@jamilservices/sb-module-crypto-back",
+  "description": "Simply Builder Module - Crypto utilities for SimplyBuilder",
+  "version": "1.0.2",
+  "main": "index.js",
+  "types": "./types.d.ts",
+  "files": [
+    "AUTHORS",
+    "index.js",
+    "types.d.ts",
+    "lib/sb_module_crypto.d.ts",
+    "lib/sb_module_crypto.node"
+  ],
+  "exports": {
+    "default": "./index.js"
+  },
+  "scripts": {
+    "clean": "rm -rf lib && rm -rf target",
+    "copy": "cp sb_module_crypto.d.ts lib",
+    "build": "pnpm run clean && napi build --release lib && pnpm run copy",
+    "build:debug": "pnpm run clean && napi build lib && pnpm run copy",
+    "test": "node --test tests/index.js",
+    "prepublish": "pnpm build",
+    "version:patch": "pnpx changelogen@latest --bump --patch",
+    "version:minor": "pnpx changelogen@latest --bump --minor",
+    "version:major": "pnpx changelogen@latest --bump --major"
+  },
+  "homepage": "https://simplybuilder.github.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimplyBuilder/sb-module-crypto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SimplyBuilder/sb-module-crypto/issues"
+  },
+  "author": "Jamil Serviços <jamilservicos@gmail.com> (https://github.com/jamilservicos)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.10.x"
+  },
+  "os": [
+    "!win32"
+  ],
+  "keywords": [
+    "jamilservicos",
+    "jamilservices",
+    "nodejs",
+    "javascript",
+    "simply-builder",
+    "simplybuilder",
+    "simply",
+    "builder",
+    "module",
+    "cripto",
+    "crypto",
+    "node",
+    "nodejs",
+    "node.js",
+    "backend",
+    "native",
+    "napi",
+    "napi-rs",
+    "rust",
+    "hash",
+    "md5",
+    "sha256",
+    "sha512",
+    "base64",
+    "encode",
+    "decode",
+    "uuid",
+    "uuidv4",
+    "random",
+    "randombytes",
+    "bytes"
+  ],
+  "napi": {
+    "name": "sb_module_crypto"
+  }
+}
