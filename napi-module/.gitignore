@@ -11,3 +11,15 @@
 !GOVERNANCE.md
 !CONTRIBUTING.md
 !CHANGELOG.md
+
+!build.rs
+!Cargo.toml
+!index.js
+!sb_module_crypto.d.ts
+!types.d.ts
+
+!tests
+!tests/**
+
+!src
+!src/lib.rs
