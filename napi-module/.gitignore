@@ -17,6 +17,7 @@
 !index.js
 !sb_module_crypto.d.ts
 !types.d.ts
+!package.json
 
 !tests
 !tests/**
