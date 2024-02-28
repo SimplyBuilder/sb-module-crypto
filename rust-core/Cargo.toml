@@ -1,0 +1,43 @@
+[package]
+edition = "2021"
+name = "sb_utils_cripto"
+description = "Simply Builder Module - Crypto utilities for SimplyBuilder"
+version = "0.1.0"
+authors = ["Jamil Services <jamilservicos@gmail.com> (https://github.com/jamilservicos)"]
+exclude = [
+    ".gitignore", 
+    ".rustfmt.toml", 
+    ".github", 
+    ".rusty-hook.toml",
+    "tests/**",
+    ".vscode/**",
+    ".gitattributes",
+]
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
+publish = false
+license = "MIT"
+readme = "README.md"
+
+[lib]
+name = "sb_utils_cripto"
+path = "src/lib.rs"
+crate-type = ["rlib"]
+test = false
+
+
+[dependencies]
+uuid = { version = "1.7.0", default-features = false, features = ["v4", "fast-rng"] }
+md-5 = { version = "0.10.6", default-features = false }
+sha2 = { version = "0.10.8", default-features = false, features = ["compress"] }
+base64 = { version = "0.21.7", default-features = false, features = ["alloc"] }
+rand = "0.8.5"
+getrandom = { version = "0.2.12", features = ["js"] }
+
+[profile.release]
+codegen-units = 1
+lto = true
+strip = "symbols"
+opt-level = 3
