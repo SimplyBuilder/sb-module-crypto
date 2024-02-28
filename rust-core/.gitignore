@@ -1,0 +1,11 @@
+*
+
+!.gitignore
+
+!AUTHORS
+!LICENSE
+!MAINTAINERS.md
+!README.md
+!GOVERNANCE.md
+!CONTRIBUTING.md
+!CHANGELOG.md
