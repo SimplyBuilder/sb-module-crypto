@@ -11,3 +11,12 @@
 !GOVERNANCE.md
 !CONTRIBUTING.md
 !CHANGELOG.md
+
+!Cargo.toml
+!index.html
+!index.js
+!types.d.ts
+!package.json
+
+!src
+!src/lib.rs
