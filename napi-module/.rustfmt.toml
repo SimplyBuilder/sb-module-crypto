@@ -1,0 +1,9 @@
+indent_style = "Block"
+newline_style="Unix"
+fn_args_layout="Compressed"
+reorder_imports = true
+format_code_in_doc_comments = true
+normalize_comments = true
+wrap_comments = true
+comment_width = 80
+edition = "2021"
