@@ -2,7 +2,7 @@
   "name": "@jamilservices/sb-module-crypto-front",
   "package": "@jamilservices/sb-module-crypto-front",
   "description": "Simply Builder Module - Crypto utilities for SimplyBuilder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "module": "index.js",
   "type": "module",
   "types": "./types.d.ts",
