@@ -2,7 +2,7 @@
   "name": "@jamilservices/sb-module-crypto-back",
   "package": "@jamilservices/sb-module-crypto-back",
   "description": "Simply Builder Module - Crypto utilities for SimplyBuilder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "types": "./types.d.ts",
   "files": [
