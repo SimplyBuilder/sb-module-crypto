@@ -1,0 +1,40 @@
+[package]
+edition = "2021"
+name = "sb_module_crypto"
+description = "Simply Builder Module - Crypto utilities for SimplyBuilder"
+version = "0.1.0"
+authors = ["Jamil Services <jamilservicos@gmail.com> (https://github.com/jamilservicos)"]
+exclude = [
+    ".gitignore", 
+    ".rustfmt.toml", 
+    ".github", 
+    ".rusty-hook.toml",
+    "tests/**",
+    ".vscode/**",
+    ".gitattributes",
+]
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
+publish = false
+license = "MIT"
+readme = "README.md"
+
+[lib]
+name = "sb_module_crypto"
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+test = false
+
+
+[dependencies]
+lol_alloc = { version = "0.4.1" }
+wasm-bindgen = { version = "0.2.91", default-features = false }
+sb_utils_cripto = { path = "../rust-core" }
+
+[profile.release]
+codegen-units = 1
+lto = true
+strip = "symbols"
+opt-level = 3
