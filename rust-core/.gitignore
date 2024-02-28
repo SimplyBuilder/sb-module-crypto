@@ -19,3 +19,6 @@
 !src/lib.rs
 !src/modules
 !src/modules/**
+
+!tests
+!tests/**
