@@ -41,3 +41,7 @@ codegen-units = 1
 lto = true
 strip = "symbols"
 opt-level = 3
+
+[[test]]
+name = "lib-test"
+path = "tests/lib-tests.rs"
