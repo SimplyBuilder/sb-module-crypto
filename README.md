@@ -8,8 +8,8 @@ SimplyBuilderCrypto offers a comprehensive suite of cryptographic utilities tail
 [![SimplyBuilder - sb-module-crypto](https://img.shields.io/static/v1?label=SimplyBuilder&message=sb-module-crypto&color=blue&logo=github)](https://github.com/SimplyBuilder/sb-module-crypto)
 [![GitHub License](https://img.shields.io/github/license/SimplyBuilder/sb-module-crypto)](https://github.com/SimplyBuilder/sb-module-crypto/blob/main/LICENSE)
 
-[![GitHub package.json front](https://img.shields.io/github/package-json/v/SimplyBuilder/sb-module-crypto?filename=wasm-module%2Fpackage.json)](https://github.com/SimplyBuilder/sb-module-crypto/blob/main/napi-module/package.json#L5)
-[![GitHub package.json back](https://img.shields.io/github/package-json/v/SimplyBuilder/sb-module-crypto?filename=napi-module%2Fpackage.json)](https://github.com/SimplyBuilder/sb-module-crypto/blob/main/wasm-module/package.json#L5)
+[![GitHub package.json front](https://img.shields.io/github/package-json/v/SimplyBuilder/sb-module-crypto?filename=wasm-module%2Fpackage.json&label=frontend%20version)](https://github.com/SimplyBuilder/sb-module-crypto/blob/main/napi-module/package.json#L5)
+[![GitHub package.json back](https://img.shields.io/github/package-json/v/SimplyBuilder/sb-module-crypto?filename=napi-module%2Fpackage.json&label=backend%20version)](https://github.com/SimplyBuilder/sb-module-crypto/blob/main/wasm-module/package.json#L5)
 [![GitHub Release](https://img.shields.io/github/v/release/SimplyBuilder/sb-module-crypto)](https://github.com/SimplyBuilder/sb-module-crypto/releases)
 ![GitHub top language](https://img.shields.io/github/languages/top/SimplyBuilder/sb-module-crypto)
 
