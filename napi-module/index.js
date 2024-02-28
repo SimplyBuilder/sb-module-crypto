@@ -11,7 +11,7 @@ const pkg = require("./package.json");
  *
  * @returns {Object|null} An object containing cryptographic functions if successfully loaded, otherwise null.
  */
-const wasmImports = () => {
+const napiImports = () => {
     const localFileExisted = resolve(__dirname, 'lib', 'sb_module_crypto.node');
     try {
         if (existsSync(join(localFileExisted))) {
@@ -24,7 +24,7 @@ const wasmImports = () => {
     }
 };
 
-const wasm = wasmImports();
+const napi = napiImports();
 
 /**
  * Custom error handler for SimplyBuilderCrypto. Throws a TypeError with a custom message.
@@ -43,7 +43,14 @@ const SimplyBuilderCryptoError = (message) => {
  * or native bindings for cryptographic operations.
  *
  * @name SimplyBuilderCrypto
- * @type {{base64Encode: ((function(string): (string|undefined))|*), hashMD5: ((function(string): string)|*), base64Decode: ((function(string): (string|undefined))|*), hash256: ((function(string): string)|*), name: string, hash512: ((function(string): string)|*), version: string, randomUUIDV4: ((function(): (string|undefined))|*), randomBytes: ((function(number=): (Uint8Array|undefined))|*)}}
+ * @type {object}
+ * @property {Function} hashMD5 - Generates an MD5 hash of a string.
+ * @property {Function} hash256 - Generates a SHA256 hash of a string.
+ * @property {Function} hash512 - Generates a SHA512 hash of a string.
+ * @property {Function} base64Encode - Encodes a string to base64 format.
+ * @property {Function} base64Decode - Decodes a base64 encoded string.
+ * @property {Function} randomUUIDV4 - Generates a random UUID version 4 string.
+ * @property {Function} randomBytes - Generates an array of random bytes.
  */
 const SimplyBuilderCrypto = {
     /**
@@ -55,7 +62,8 @@ const SimplyBuilderCrypto = {
      */
     version: pkg.version.toString(),
     /**
-     * @name hashMD5
+     * Generates an MD5 hash of a string.
+     * @function hashMD5
      * @param {string} string - string to encode in md5 hash
      * @return string
      */
@@ -70,7 +78,8 @@ const SimplyBuilderCrypto = {
         return undefined;
     },
     /**
-     * @name hash256
+     * Generates a SHA256 hash of a string.
+     * @function hash256
      * @param {string} string - string to encode in hash256 hash
      * @return string
      */
@@ -85,7 +94,8 @@ const SimplyBuilderCrypto = {
         return undefined;
     },
     /**
-     * @name hash512
+     * Generates a SHA512 hash of a string.
+     * @function hash512
      * @param {string} string - string to encode in hash512 hash
      * @return string - lowercase string in hex
      */
@@ -100,7 +110,8 @@ const SimplyBuilderCrypto = {
         return undefined;
     },
     /**
-     * @name base64Encode
+     * Encodes a string to base64 format.
+     * @function base64Encode
      * @param {string} string - string to encode(utf8) in base64
      * @return {string|undefined}
      */
@@ -115,7 +126,8 @@ const SimplyBuilderCrypto = {
         return undefined;
     },
     /**
-     * @name base64Decode
+     * Decodes a base64 encoded string.
+     * @function base64Decode
      * @param {string} string - string encoded(utf8) in base64 to decode
      * @return {string|undefined}
      */
@@ -130,7 +142,8 @@ const SimplyBuilderCrypto = {
         return undefined;
     },
     /**
-     * @name randomUUIDV4
+     * Generates a random UUID version 4 string.
+     * @function randomUUIDV4
      * @return {string|undefined}
      */
     randomUUIDV4: () => {
@@ -142,7 +155,8 @@ const SimplyBuilderCrypto = {
         return undefined;
     },
     /**
-     * @name randomBytes
+     * Generates an array of random bytes.
+     * @function randomBytes
      * @param {number} [length=32] - default value: 32
      * @return {Uint8Array|undefined}
      */
@@ -158,7 +172,7 @@ const SimplyBuilderCrypto = {
     }
 };
 /**
- * Provides a comprehensive cryptographic API by dynamically loading WebAssembly (WASM) or native bindings.
+ * Provides a comprehensive cryptographic API by dynamically loading Native Addons API (NAPI) or native bindings.
  * If the specified native binding file exists within the 'lib' directory, it requires and returns an object
  * containing various cryptographic functions. Otherwise, it logs an error and returns null, indicating that
  * the native bindings are not available.
