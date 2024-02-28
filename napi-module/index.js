@@ -70,7 +70,7 @@ const SimplyBuilderCrypto = {
     hashMD5: (string) => {
         try {
             if(typeof string === "string") {
-                return wasm.md5(string);
+                return napi.md5(string);
             } else SimplyBuilderCryptoError("The input data must be of type string!");
         } catch (err) {
             console.error(err);
@@ -86,7 +86,7 @@ const SimplyBuilderCrypto = {
     hash256: (string) => {
         try {
             if(typeof string === "string") {
-                return wasm.sha256(string);
+                return napi.sha256(string);
             } else SimplyBuilderCryptoError("The input data must be of type string!");
         } catch (err) {
             console.error(err);
@@ -102,7 +102,7 @@ const SimplyBuilderCrypto = {
     hash512: (string) => {
         try {
             if(typeof string === "string") {
-                return wasm.sha512(string);
+                return napi.sha512(string);
             } else SimplyBuilderCryptoError("The input data must be of type string!");
         } catch (err) {
             console.error(err);
@@ -118,7 +118,7 @@ const SimplyBuilderCrypto = {
     base64Encode: (string) => {
         try {
             if(typeof string === "string") {
-                return wasm.base64Encode(string);
+                return napi.base64Encode(string);
             } else SimplyBuilderCryptoError("The input data must be of type string!");
         } catch (err) {
             console.error(err);
@@ -134,7 +134,7 @@ const SimplyBuilderCrypto = {
     base64Decode: (string) => {
         try {
             if(typeof string === "string") {
-                return wasm.base64Decode(string);
+                return napi.base64Decode(string);
             } else SimplyBuilderCryptoError("The input data must be of type string!");
         } catch (err) {
             console.error(err);
@@ -148,7 +148,7 @@ const SimplyBuilderCrypto = {
      */
     randomUUIDV4: () => {
         try {
-            return wasm.randomUuidv4();
+            return napi.randomUuidv4();
         } catch (err) {
             console.error(err);
         }
@@ -163,7 +163,7 @@ const SimplyBuilderCrypto = {
     randomBytes: (length = 32) => {
         try {
             if(typeof length === "number") {
-                return wasm.randomBytes(length);
+                return napi.randomBytes(length);
             } else SimplyBuilderCryptoError("The input data must be of type number!");
         } catch (err) {
             console.error(err);
