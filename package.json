@@ -1,0 +1,16 @@
+{
+  "package": "sb_utils_cripto",
+  "version": "0.0.4",
+  "packageManager": "pnpm@8.15.4",
+  "workspaces": [
+    "napi-module",
+    "wasm-module"
+  ],
+  "scripts": {
+    "publish:test": "pnpm publish -r --dry-run --no-git-checks",
+    "publish:modules": "pnpm publish -r --no-git-checks --access public",
+    "version:patch": "pnpx changelogen@latest --bump --patch",
+    "version:minor": "pnpx changelogen@latest --bump --minor",
+    "version:major": "pnpx changelogen@latest --bump --major"
+  }
+}
