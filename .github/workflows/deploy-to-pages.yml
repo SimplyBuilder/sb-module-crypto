@@ -38,7 +38,6 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Install dependencies
         run: |
-          ls
           cd institutional-website-v1
           pnpm install
           pnpm run build
@@ -48,7 +47,7 @@ jobs:
         name: Upload dist
         with:
           name: github-pages
-          path: artifact.tar
+          path: institutional-website-v1/artifact.tar
 
   # Single deploy job since we're just deploying
   deploy:
