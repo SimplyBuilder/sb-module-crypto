@@ -38,6 +38,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Install dependencies
         run: |
+          ls
           cd institutional-website-v1
           pnpm install
           pnpm run build
