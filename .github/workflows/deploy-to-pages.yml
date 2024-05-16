@@ -1,0 +1,62 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy SimplyBuilder to Github Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  #  push:
+  #    branches: [$default-branch]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        node: [ "20.10.x" ]
+        runs-on: [ubuntu-latest]
+    runs-on: ${{ matrix.runs-on }}
+    steps:
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9.1.1
+          run_install: false
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install dependencies
+        run: |
+          cd institutional-website-v1
+          pnpm install
+          pnpm run build
+          cd build
+          tar -cvf ../artifact.tar *
+      - uses: actions/upload-artifact@v4
+        name: Upload dist
+        with:
+          name: github-pages
+          path: artifact.tar
+
+  # Single deploy job since we're just deploying
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
